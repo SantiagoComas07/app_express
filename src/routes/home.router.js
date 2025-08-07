@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const axios = require('axios');
+// LLamo mi controlador
+const controller = require('../controllers/home.controller.js')
 
-router.get('/home', (req,res)=>{
-    res.send("Bienvenido a home");
-});
+// Uso mi controlador
+
+router.get('/', controller.index);
 
 
 module.exports=router

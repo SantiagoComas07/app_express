@@ -10,8 +10,8 @@ const app = express();
 
 
 // Aqui especificamos las rutas que usaremos
-app.use(routerProduct);
-app.use(routerHome);
+app.use('/products', routerProduct);
+app.use('/home', routerHome);
 
 // mostramos la vista
 app.get("/", (req,res) =>{

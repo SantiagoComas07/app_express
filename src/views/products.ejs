@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Productos</title>
+</head>
+
+<body>
+    <!-- Para mostrar esta vista lo haces desde el controlador -->
+    <header>
+        <nav>
+             <a href="/">Inicio</a>
+             <a href="/home">Home</a>
+             <a href="/products">Productos</a>
+        </nav>
+    </header>
+    <main>
+        <h1>productos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Para poder integrar el contenido dinamico voy a utilizar la libreria ejs -->
+                <% response.forEach(product=>{ %>
+                    <tr>
+                        <td>
+                            <%= product.title %>
+                        </td>
+                        <td>
+                            <%= product.description %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <small>copyRight 2025</small>
+    </footer>
+
+</body>
+
+</html>

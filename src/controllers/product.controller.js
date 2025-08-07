@@ -3,7 +3,9 @@ const axios = require('axios');
 const requestGet = (req, res) =>{
 axios('https://fakestoreapi.com/products?limit=5')
 .then(response =>{
-    res.send(response.data)
+    // res.send(response.data)
+    // Renderizamos la vista
+    res.render('products', { response: response.data })
 })
 .catch(error =>{
     console.error('Error en la peticion: ', error)
